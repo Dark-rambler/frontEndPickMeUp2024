@@ -8,7 +8,8 @@ export const labels = {
         stores: "Tiendas",
         myAccount: "Mi cuenta",
         search: "Buscar",
-        bussinesName: "Pick me Up"
+        bussinesName: "Pick me Up",
+        slogan: "Salvemos la Comida",
     },
     footer: {
         "text": "footer"

@@ -21,7 +21,9 @@ const config: Config = {
         "tittles-color": "#471d1a",
         "text-color": "#613b3b",
         "white": "#fff",
-        'color-menu': "#f95234",
+        "color-menu": "#f95234",
+        "icons-primary": "#471d1a",
+        "cream":"#fffdd0"
       },
     },
   },

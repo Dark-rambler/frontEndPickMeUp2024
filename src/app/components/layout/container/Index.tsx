@@ -11,11 +11,6 @@ export const Container: React.FC<ContainerProps> = ({
 }: ContainerProps) => {
   const options: headerProps[] = [
     {
-      icon: "search",
-      link: "/search",
-      label: "Search",
-    },
-    {
       icon: "user",
       link: "/",
       label: "Home",
@@ -27,11 +22,17 @@ export const Container: React.FC<ContainerProps> = ({
       link: "/store",
       label: "Tiendas",
     },
+    {
+      icon: "search",
+      link: "/search",
+      label: "Search",
+    },
   ];
+
   return (
     <div className="bg-white py-2">
       <div
-        className=" absolute inset-0 z-0 bg-cover bg-center bg-no-repeat filter blur-md"
+        className="inset-0 z-0 bg-cover bg-center bg-no-repeat filter blur-md fixed"
         style={{
           backgroundImage:
             "url('https://i.pinimg.com/564x/1d/6a/a3/1d6aa30936a12cd3b40a2cb184d2c952.jpg')",
@@ -41,7 +42,7 @@ export const Container: React.FC<ContainerProps> = ({
         <div className=" h-full rounded-md  ">
           <Header menu={options} />
           <div className="h-5/6 bg-white/30 z-50 ">{children}</div>
-          <Footer menu={options}/>
+          <Footer menu={options} />
         </div>
       </div>
     </div>
