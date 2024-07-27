@@ -19,14 +19,19 @@ export const Container: React.FC<ContainerProps> = ({
 
     {
       icon: "store",
-      link: "/store",
+      link: "/stores",
       label: "Tiendas",
     },
     {
-      icon: "search",
-      link: "/search",
-      label: "Search",
+      icon: "product",
+      link: "/products",
+      label: "Productos",
     },
+    {
+      icon: "arrowLeft",
+      link: "/register",
+      label: " Ingresar",
+    } 
   ];
 
   return (
