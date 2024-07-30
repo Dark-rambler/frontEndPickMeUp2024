@@ -1,4 +1,6 @@
 import React from "react";
+import InputComponent from "../components/intput/Index";
+import ButtonComponent from "../components/button/Index";
 
 export default function Register() {
   return (
@@ -12,15 +14,16 @@ export default function Register() {
             </p>
 
             <form action="" className="flex flex-col gap-4">
-              <input
-                className="p-2 mt-8 rounded-xl border"
+              <InputComponent
+                className="p-2 mt-8 rounded-xl "
                 type="email"
                 name="email"
                 placeholder="Email"
               />
               <div className="relative">
-                <input
-                  className="p-2 rounded-xl border w-full"
+                <InputComponent
+                  label="Password"
+                  className="p-2 w-full"
                   type="password"
                   name="password"
                   id="password"
@@ -51,19 +54,19 @@ export default function Register() {
                   <path d="M5.525 7.646a2.5 2.5 0 0 0 2.829 2.829l-2.83-2.829zm4.95.708-2.829-2.83a2.5 2.5 0 0 1 2.829 2.829zm3.171 6-12-12 .708-.708 12 12-.708.708z"></path>
                 </svg>
               </div>
-              <button
+              <ButtonComponent
                 className="bg-tertiary text-white py-2 rounded-xl hover:scale-105 duration-300 hover:bg-secondary font-medium"
                 type="submit"
               >
                 Login
-              </button>
+              </ButtonComponent>
             </form>
             <div className="mt-6  items-center text-gray-100">
               <hr className="border-gray-300" />
               <p className="text-center text-sm">O</p>
               <hr className="border-gray-300" />
             </div>
-            <button className="bg-white border py-2 w-full rounded-xl mt-5 flex justify-center items-center text-sm hover:scale-105 duration-300 hover:bg-[#60a8bc4f] font-medium">
+            <ButtonComponent className="bg-white border py-2 w-full rounded-xl mt-5 flex justify-center items-center text-sm hover:scale-105 duration-300 hover:bg-[#60a8bc4f] font-medium">
               <svg
                 className="mr-3"
                 xmlns="http://www.w3.org/2000/svg"
@@ -88,23 +91,22 @@ export default function Register() {
                 ></path>
               </svg>
               Iniciar Sesión con Google
-            </button>
+            </ButtonComponent>
             <div className="mt-10 text-sm border-b border-gray-500 py-5 playfair tooltip">
               Olvidate tu contraseña?
             </div>
 
             <div className="mt-4 text-sm flex justify-between items-center container-mr">
               <p className="mr-3 md:mr-0 ">Si no tienes cuenta aún..</p>
-              <button className="hover:border register text-white bg-primary hover:border-gray-400 rounded-xl py-2 px-5 hover:scale-110 hover:bg-secondary font-semibold duration-300">
+              <ButtonComponent className="hover:border register text-white bg-white hover:border-gray-400 rounded-xl py-2 px-5 hover:scale-110 hover:bg-secondary font-semibold duration-300">
                 Regístrate
-              </button>
+              </ButtonComponent>
             </div>
           </div>
           <div className="md:block hidden w-1/2">
             <img
               className="rounded-2xl max-h-[1600px]"
               src="https://comedelahuerta.com/wp-content/uploads/2021/04/Biopan-64-Integral-de-trigo-600x400-1.jpg"
-              
               alt="login form image"
             />
           </div>
