@@ -33,7 +33,6 @@ type TInputProps = InputProps & {
   name: string
   control?: Control<any>
   type?: 'text' | 'number' | 'date' | 'textArea' | 'email' | 'password'
-  variant?: 'bordered' | 'flat' | 'faded' | 'underlined'
   valueAs?: 'number' | 'date' | 'string'
   placeholder?: string
   label?: string
@@ -84,8 +83,7 @@ const InputComponent: React.FC<TInputProps> = ({
                   defaultValue={defaultValue}
                   type={type}
                   placeholder={placeholder}
-                  value={field.value || ''}
-                  
+                  value= { field.value || ''}
                   {...props}
                 />
                 <ErrorMessage

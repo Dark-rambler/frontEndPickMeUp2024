@@ -17,7 +17,7 @@ export const Header = ({ menu }: interfaceOptionsProps) => {
   const pathName = usePathname();
 
   return (
-    <div className="relative rounded-t-2xl p-4 mt-5 flex bg-white/30 justify-between">
+    <div className="relative rounded-t-2xl p-4 mt-5 flex bg-white/30 justify-between items-center">
       <div className="relative rounded-xl p-2 flex md:hidden">
         <span
           className="w-14 h-14 p-4 
@@ -29,14 +29,6 @@ export const Header = ({ menu }: interfaceOptionsProps) => {
         </span>
       </div>
       <div className="flex items-center cursor-pointer rounded-full">
-        <div className="text-center ">
-          <h2 className="text-tittles-color text-3xl me-2 font-extrabold tittle-font text-center  ">
-            {labels.nav.bussinesName}
-          </h2>
-          <small className="text-xs font-semibold -mt-3 tittle-font">
-            {labels.nav.slogan}
-          </small>
-        </div>
         <CustomLogo name="logo"></CustomLogo>
       </div>
 
@@ -45,8 +37,8 @@ export const Header = ({ menu }: interfaceOptionsProps) => {
           <div
             className={`px-4 w-full hover:bg-primary transition-all
                duration-500 group cursor-pointer h-full flex items-center rounded-full ${
-              pathName === item.link && "bg-primary "
-            }`}
+                 pathName === item.link && "bg-primary "
+               }`}
             key={index}
           >
             <Link href={item.link}>

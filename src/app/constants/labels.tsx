@@ -13,5 +13,9 @@ export const labels = {
     },
     footer: {
         "text": "footer"
+    },
+    title:{
+        
     }
+
     };

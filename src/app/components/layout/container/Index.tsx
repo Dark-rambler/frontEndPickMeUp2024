@@ -35,19 +35,17 @@ export const Container: React.FC<ContainerProps> = ({
   ];
 
   return (
-    <div className="bg-white py-2">
+    <div className="bg-white p-10">
       <div
-        className="inset-0 z-0 bg-cover bg-center bg-no-repeat filter blur-md fixed"
+        className="inset-0 z-0 bg-cover bg-center bg-no-repeat filter blur-sm fixed"
         style={{
           backgroundImage:
-            "url('https://i.pinimg.com/564x/1d/6a/a3/1d6aa30936a12cd3b40a2cb184d2c952.jpg')",
+            "url('https://media.istockphoto.com/id/515373062/vector/food-seamless-background.jpg?s=612x612&w=0&k=20&c=hexa_lBms2zsFxEHASUeYhNu17i8JfV3TGOoDark-tk=')",
         }}
       ></div>
       <div className="px-14 relative z-10 h-screen ">
         <div className=" h-full rounded-md  ">
-          <Header menu={options} />
-          <div className="h-5/6 bg-white/30 z-50 ">{children}</div>
-          <Footer menu={options} />
+          <div className="h-full flex flex-col">{children}</div>
         </div>
       </div>
     </div>
