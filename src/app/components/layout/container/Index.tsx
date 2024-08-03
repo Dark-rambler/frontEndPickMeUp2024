@@ -38,7 +38,7 @@ export const Container: React.FC<ContainerProps> = ({
             "url('https://i.pinimg.com/564x/1d/6a/a3/1d6aa30936a12cd3b40a2cb184d2c952.jpg')",
         }}
       ></div>
-      <div className="px-14 relative z-10 h-screen ">
+      <div className="mx-14 relative  z-10 h-screen ">
         <div className=" h-full rounded-md  ">
           <Header menu={options} />
           <div className="h-5/6 bg-white/30 z-50 ">{children}</div>
