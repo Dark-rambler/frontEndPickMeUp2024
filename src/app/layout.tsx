@@ -2,7 +2,7 @@ import React from "react";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import AppMui from "./miui/AppMui";
+import AppMui from "./nextUI/AppNextUI";
 import { Container } from "./components/layout/container/Index";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -19,7 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className="">
         <AppMui>
           <Container>{children}</Container>
         </AppMui>
