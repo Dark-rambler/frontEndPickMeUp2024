@@ -9,67 +9,62 @@ export const NavStores = () => {
   const typeStores = [
     {
       id: 1,
-      name: "Restaurante",
+      name: "Saludable",
       icon: "user",
     },
     {
       id: 2,
-      name: "Bar",
-      icon: "user",
+      name: "Festivo",
+      icon: "party",
     },
     {
       id: 3,
-      name: "Café",
-      icon: "user",
+      name: "Cafeterías",
+      icon: "coffe",
     },
     {
       id: 4,
-      name: "Fast Food",
-      icon: "user",
-    },
-    {
-      id: 5,
-      name: "Comida Rápida",
-      icon: "user",
-    },
-    {
-      id: 6,
-      name: "Comida Rápida",
+      name: "Adultos",
       icon: "user",
     },
   ];
   return (
     <section className="mt-12 ">
-      <div className="flex justify-between w-full">
-        <h3 className="font-bold text-2xl text-tittles-color ">Restaurants</h3>
-        <InputComponent
-          name="searchStore"
-          placeholder={labels.placeholders.searchStore}
-          className=" rounded bg-white/70 px-3 py-1"
-        />
+      <div className="flex sm:flex-row flex-col justify-between w-full">
+        <h3 className="font-bold text-2xl text-tittles-color ">{labels.sections.restaurants}</h3>
+        <div>
+          <InputComponent
+            name="searchStore"
+            placeholder={labels.placeholders.searchStore}
+            className=" rounded md:px-3 md:py-1 py-3"
+            variant="bordered"
+            endContent={
+              <IconSelector
+                name="search"
+                customClassName="fill-icons-primary"
+              />
+            }
+          />
+        </div>
       </div>
-      <div className=" md:flex hidden items-center justify-center h-10 mt-2">
+      <div className=" flex flex-wrap mt-2 items-center md:justify-start justify-center">
         {typeStores.map((item, index) => (
           <div
-            className={`px-4 w-full hover:bg-primary transition-all
-               duration-500 group cursor-pointer h-full flex items-center rounded-full`}
+            className={`p-4 mt-6  hover:bg-primary transition-all
+               duration-500 group cursor-pointer h-full flex items-center justify-center rounded`}
             key={index}
           >
-              <span className="flex items-center justify-center ">
-                <IconSelector
-                  name={item.icon as IconNameType}
-                  customClassName={`${
-                    "fill-icons-primary"
-                  } group-hover:fill-gray-300`}
-                />
-                <h2
-                  className={`${
-                "text-white group-hover:text-gray-300/80"
-                  } `}
-                >
-                  {item.name}
-                </h2>
-              </span>
+            <span className="flex items-center justify-center ">
+              <IconSelector
+                name={item.icon as IconNameType}
+                customClassName={`${"fill-icons-primary"} me-1 group-hover:fill-gray-300`}
+              />
+              <h2
+                className={`${"text-secondary group-hover:text-gray-300/80"} `}
+              >
+                {item.name}
+              </h2>
+            </span>
           </div>
         ))}
       </div>

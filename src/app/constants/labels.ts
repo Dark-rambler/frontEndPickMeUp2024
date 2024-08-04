@@ -20,4 +20,7 @@ export const labels = {
     placeholders: {
         searchStore: "Buscar una tienda",
     },
+    sections: {	
+        "restaurants": "Restaurantes",
+    },
     };

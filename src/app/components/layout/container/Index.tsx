@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import { Header } from "../header/Index";
 import { Footer } from "../footer/Index";
@@ -19,29 +21,28 @@ export const Container: React.FC<ContainerProps> = ({
 
     {
       icon: "store",
-      link: "/store",
+      link: "/stores",
       label: "Tiendas",
     },
     {
-      icon: "search",
-      link: "/search",
-      label: "Search",
+      icon: "product",
+      link: "/products",
+      label: "Productos",
+    },
+    {
+      icon: "arrowLeft",
+      link: "/register",
+      label: " Ingresar",
     },
   ];
 
   return (
-    <div className="bg-white py-2">
-      <div
-        className="inset-0 z-0 bg-cover bg-center bg-no-repeat filter blur-md fixed"
-        style={{
-          backgroundImage:
-            "url('https://i.pinimg.com/564x/1d/6a/a3/1d6aa30936a12cd3b40a2cb184d2c952.jpg')",
-        }}
-      ></div>
-      <div className="mx-14 relative  z-10 h-screen ">
+    <div className="bg-white h-full z-10 py-2 ">
+      <div className="  inset-0 z-0 bg-tertiary  fixed"></div>
+      <div className="md:mx-14 mx-6 relative  z-10  ">
         <div className=" h-full rounded-md  ">
           <Header menu={options} />
-          <div className="h-5/6 bg-white/30 z-50 ">{children}</div>
+          <div className="h-full bg-white">{children}</div>
           <Footer menu={options} />
         </div>
       </div>
