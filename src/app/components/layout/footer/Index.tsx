@@ -7,7 +7,7 @@ import { interfaceOptionsProps } from "../header/Index";
 
 export const Footer = ({ menu }: interfaceOptionsProps) => {
   return (
-    <div className="relative rounded-b-2xl p-4 mb-5 flex bg-white/30 justify-between">
+    <div className=" rounded-b-2xl p-4 mb-5 flex bg-white justify-between">
       <div className=" flex flex-col justify-center items-center ">
         <CustomLogo name="logo"></CustomLogo>
         <div className="text-center ">

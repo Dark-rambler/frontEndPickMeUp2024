@@ -1,84 +1,81 @@
-import { Button, Tooltip } from "@mui/material";
-import React from "react";
+import React from 'react'
 
-type colorButtonsTypes =
-  | "edit"
-  | "delete"
-  | "submit"
-  | "history"
-  | "eye"
-  | "default";
+import { Button, Tooltip } from '@nextui-org/react'
+
+type typeButtons = 'edit' | 'delete' | 'submit' | 'history' | 'eye' | 'default'
 
 type TButtonProps = {
-  children: React.ReactNode;
-  onClick?: () => void;
-  type?: colorButtonsTypes;
-  disabled?: boolean;
-  className?: string;
-  showTooltip?: boolean;
-  tooltipText?: string;
-  endIcon?: React.ReactNode;
-  // isLoading?: boolean;
-  // isIconOnly?: boolean;
-  // typeOf?: "button" | "submit" | "reset" | undefined;
-};
+  children: React.ReactNode
+  onClick?: () => void
+  type?: typeButtons
+  disabled?: boolean
+  className?: string
+  showTooltip?: boolean
+  tooltipText?: string
+  isLoading?: boolean
+  isIconOnly?: boolean
+  typeOf?: 'button' | 'submit' | 'reset' | undefined
+}
 
 const ButtonComponent = ({
   children,
   onClick,
-  type = "default",
+  type = 'default',
+  typeOf,
+  disabled,
+  className,
   showTooltip = true,
-  tooltipText = "",
-  className = "",
-  disabled = false,
-  endIcon,
+  isLoading = false,
+  isIconOnly = false,
+  tooltipText = ''
 }: TButtonProps) => {
   const getTooltipId = () => {
-    return tooltipText ? `tooltip-${type}` : "";
-  };
+    return tooltipText ? `tooltip-${type}` : ''
+  }
 
-  const getColor = (type: colorButtonsTypes) => {
+  const getColor = (type: typeButtons) => {
     switch (type) {
-      case "edit":
-        return "primary";
-      case "delete":
-        return "danger";
-      case "submit":
-        return "success";
-      case "history":
-        return "blue-500";
-      case "eye":
-        return "secondary";
+      case 'edit':
+        return 'primary'
+      case 'delete':
+        return 'danger'
+      case 'submit':
+        return 'success'
+      case 'history':
+        return 'blue-500'
+      case 'eye':
+        return 'secondary'
       default:
-        return "primary";
+        return 'primary'
     }
-  };
+  }
   return (
     <>
       {showTooltip ? (
-        <Tooltip
-          title={tooltipText}
-          content={tooltipText}
-          className={`text-${getColor(type)}`}
-        >
-          <Button
+        <Tooltip content={tooltipText} className={`text-${getColor(type)}`}>
+          <button
             id={getTooltipId()}
-            className={` bg-gray-100 p-1 ${className} `}
+            className={`rounded bg-gray-100 p-1 ${className} `}
             onClick={onClick}
             disabled={disabled}
-            endIcon={endIcon}
           >
             {children}
-          </Button>
+          </button>
         </Tooltip>
       ) : (
-        <Button
-          className={`rounded bg-gray-100 p-1 ${className} `}
+        < Button
+          type={typeOf}
+          isLoading={isLoading}
+          id={getTooltipId()}
+          className={`rounded bg-gray-100 p-1 ${className} ${disabled && 'cursor-not-allowed'} `}
           onClick={onClick}
           disabled={disabled}
-          >{children}</Button>
+          isIconOnly={isIconOnly}
+        >
+          {children}
+        </Button>
       )}
     </>
-  );
-};
-export default ButtonComponent;
+  )
+}
+export default ButtonComponent

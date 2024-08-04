@@ -17,7 +17,7 @@ export const Header = ({ menu }: interfaceOptionsProps) => {
   const pathName = usePathname();
 
   return (
-    <div className="relative rounded-t-2xl p-4 mt-5 flex bg-white/30 justify-between items-center">
+    <div className="relative rounded-t-2xl p-4 mt-5 flex bg-white justify-between">
       <div className="relative rounded-xl p-2 flex md:hidden">
         <span
           className="w-14 h-14 p-4 
@@ -55,7 +55,7 @@ export const Header = ({ menu }: interfaceOptionsProps) => {
                   className={`${
                     pathName === item.link
                       ? "text-gray-300/80"
-                      : "text-white group-hover:text-gray-300/80"
+                      : "text-secondary group-hover:text-gray-300/80"
                   } `}
                 >
                   {item.label}

@@ -14,8 +14,13 @@ export const labels = {
     footer: {
         "text": "footer"
     },
-    title:{
-        
-    }
-
+    legends: {
+        storeLegend: "Los postres que amas de la tienda que te encanta",
+    },
+    placeholders: {
+        searchStore: "Buscar una tienda",
+    },
+    sections: {	
+        "restaurants": "Restaurantes",
+    },
     };
