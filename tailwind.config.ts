@@ -15,6 +15,13 @@ const config: Config = {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        'gradient-vertical': 'linear-gradient(to top, #secondary 0%, #transparent 100%)'
+      },
+      keyframes: {
+        'gradient-vertical': {
+          '0%': { backgroundSize: '100% 0' },
+          '100%': { backgroundSize: '100% 100%' },
+        },
       },
       colors: {
         "primary": "#7b4c46",
@@ -27,6 +34,9 @@ const config: Config = {
         "color-menu": "#f95234",
         "icons-primary": "#471d1a",
         "banner-color":"#f9f8fd"
+      },
+      animation: {
+        'gradient-vertical': 'gradient-vertical 0.5s forwards',
       },
     },
   },
