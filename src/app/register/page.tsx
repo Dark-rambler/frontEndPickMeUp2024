@@ -4,10 +4,15 @@ import ButtonComponent from "../components/button/Index";
 
 export default function Register() {
   return (
-    <div className="flex justify-between h-full px-4">
+    <div className="flex h-screen">
       <section className="flex flex-col items-center bg-white w-1/2 justify-center">
-        <h2 className="font-bold text-4xl text-center text-primary">Salvemos la comida</h2>
-        <p className="text-sm mt-4 text-secondary">Registra tu empresa y ayuda al medio ambiente mientras subes tus ganancias!!</p>
+        <h2 className="text-4xl text-center text-primary font-thin">
+          Salvemos la comida
+        </h2>
+        <p className="text-sm mt-4 text-secondary">
+          Registra tu empresa y ayuda al medio ambiente mientras subes tus
+          ganancias!!
+        </p>
 
         <form action="" className="w-full flex flex-col px-4">
           <div className="grid grid-cols-2 gap-4">
@@ -63,7 +68,10 @@ export default function Register() {
 
         <div className="mt-4 text-sm flex justify-between items-center container-mr">
           <p className="mr-3 md:mr-0 text-secondary">Ya tienes una cuenta...</p>
-          <ButtonComponent className="bg-white text-secondary rounded-xl py-2 px-5 hover:text-primary font-semibold duration-300" showTooltip={false}>
+          <ButtonComponent
+            className="bg-white text-secondary rounded-xl py-2 px-5 hover:text-primary font-semibold duration-300"
+            showTooltip={false}
+          >
             Inicia sesión
           </ButtonComponent>
         </div>

@@ -32,20 +32,15 @@ export const Container: React.FC<ContainerProps> = ({
     {
       icon: "arrowLeft",
       link: "/register",
-      label: " Ingresar",
+      label: " Registrar tienda",
     },
   ];
 
   return (
-    <div className="bg-white h-full z-10 py-2 ">
-      <div className="  inset-0 z-0 bg-tertiary  fixed"></div>
-      <div className="md:mx-14 mx-6 relative  z-10  ">
-        <div className=" h-full rounded-md  ">
-          <Header menu={options} />
-          <div className="h-full bg-white">{children}</div>
-          <Footer menu={options} />
-        </div>
-      </div>
+    <div className="bg-white h-full">
+      <Header menu={options} />
+      <div className="h-full bg-white">{children}</div>
+      <Footer menu={options} />
     </div>
   );
 };
