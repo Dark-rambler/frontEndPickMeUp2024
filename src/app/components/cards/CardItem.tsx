@@ -8,7 +8,7 @@ import {
   Button,
 } from "@nextui-org/react";
 import { IconSelector } from "../icons/Index";
-import { StoreInterface } from "@/app/interfaces/store.iterfaces";
+import { StoreInterface } from "@/app/interfaces/Store.interfaces";
 
 export const CardItem = ({
   name,

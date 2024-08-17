@@ -3,7 +3,7 @@ import React from "react";
 import { BannerStore } from "./Banner";
 import { NavStores } from "./NavStores";
 import { CardItem } from "../components/cards/CardItem";
-import { StoreInterface } from "../interfaces/store.iterfaces";
+import { StoreInterface } from "../interfaces/Store.interfaces";
 
 export default function stores() {
   const stores : StoreInterface[] = [
