@@ -22,7 +22,7 @@ export const Header = ({ menu }: interfaceOptionsProps) => {
           <span
             className="w-14 h-14 p-4 bg-white border-tertiary shadow-tertiary shadow-lg rounded-full hover:scale-110 transition-all duration-150"
           >
-            <IconSelector name="menuBar" />
+            <IconSelector name="menuBar" customClassName="fill-icons-primary"/>
           </span>
         </div>
         
@@ -63,10 +63,10 @@ export const Header = ({ menu }: interfaceOptionsProps) => {
 
       <div className="flex items-center space-x-4 justify-end pe-4">
         <a href="https://instagram.com">
-          <IconSelector name='instagram' customClassName="text-secondary"/>
+          <IconSelector name='instagram' customClassName="fill-icons-primary hover:fill-icons-secondary"/>
         </a>
         <a href="https://facebook.com">
-          <IconSelector name='facebook' customClassName="text-secondary"/>
+          <IconSelector name='facebook' customClassName="fill-icons-primary"/>
         </a>
       </div>
     </div>

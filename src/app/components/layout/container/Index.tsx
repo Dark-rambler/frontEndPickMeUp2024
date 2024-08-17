@@ -32,7 +32,7 @@ export const Container: React.FC<ContainerProps> = ({
     {
       icon: "arrowLeft",
       link: "/register",
-      label: " Ingresar",
+      label: " Registrar tienda",
     },
   ];
 
