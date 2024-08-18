@@ -32,4 +32,9 @@ export const labels = {
     sections: {	
         "restaurants": "Restaurantes",
     },
+    message: {
+        successMessage: "¡Registro exitoso!",
+        doneMessage: "¡Listo!",
+        defaultGenericMessage: "Algo salió mal",
+    },
     };

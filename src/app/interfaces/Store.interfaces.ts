@@ -8,4 +8,6 @@ export interface StoreInterface {
     image: string;
     like: boolean;
     type: string;
+    website?: string;
+    schedule?: string;
 }

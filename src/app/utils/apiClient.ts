@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import notify from './toast';
+import { labels } from '../constants/labels';
 
 const useApiClient = () => {
   const baseURL = process.env.BASE_API_URL as string;
@@ -27,12 +29,13 @@ const useApiClient = () => {
       const data = await response.json();
 
       if (!response.ok) {
+        notify(data.message || 'Error en la petición', 'error');
         throw new Error(data.message || 'Error en la petición');
       }
-
+      notify(labels.message.doneMessage, 'success');
       return data;
     } catch (error: any) {
-      console.error('Error en la petición:', error);
+      notify(error, 'error');
       setError(error.message);
       throw error;
     } finally {

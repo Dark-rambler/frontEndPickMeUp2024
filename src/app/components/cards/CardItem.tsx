@@ -15,7 +15,7 @@ export const CardItem = ({
   description,
   address,
   phone,
-  image,
+  image='https://saborgourmet.com/wp-content/uploads/pastelerias-favoritas-de-madrid-cientotreintagrados.jpg',
   like,
   type
 }: StoreInterface) => {
