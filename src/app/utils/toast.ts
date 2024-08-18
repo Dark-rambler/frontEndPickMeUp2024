@@ -1,8 +1,9 @@
 import toast from "react-hot-toast";
 
-type MessageType = "success" | "error" | "loading" | "warning";
+type MessageType = "success" | "error" | "warning";
 
 const notify = (message: string, messageType: MessageType) => {
+
     switch (messageType) {
         case "success":
             toast.success(message,
@@ -18,6 +19,7 @@ const notify = (message: string, messageType: MessageType) => {
                 }
             );
             break;
+
         case "error":
             toast.error(message, {
                 icon: '❌',
@@ -29,12 +31,9 @@ const notify = (message: string, messageType: MessageType) => {
                 },
                 duration: 5000,
                 position: 'top-right',
-
             });
             break;
-        case "loading":
-            toast.loading(message);
-            break;
+
         case "warning":
             toast(message, {
                 icon: '⚠️',
@@ -47,6 +46,7 @@ const notify = (message: string, messageType: MessageType) => {
                 position: 'top-right',
             });
             break;
+
         default:
             toast(message, { icon: '👋' });;
     }
