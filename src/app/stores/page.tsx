@@ -7,21 +7,15 @@ import { StoreInterface } from "../interfaces/Store.interfaces";
 import useApiClient from "../utils/apiClient";
 
 export default function stores() {
-  const { get, loading, error } = useApiClient();
+  const { get } = useApiClient();
   const [data, setData] = useState<StoreInterface[]>();
 
   const fetchData = async () => {
-    console.log('Fetching data...');
-    try {
       const responseData = await get('/company/search');
       setData(responseData);
-    } catch (err) {
-      console.log('Error fetching data:', err);
-    }
   };
 
   useEffect(() => {  
-    console.log('Fetching data...');
     fetchData();
   }, []);
 

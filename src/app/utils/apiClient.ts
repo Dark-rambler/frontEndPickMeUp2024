@@ -3,13 +3,12 @@ import notify from './toast';
 import { labels } from '../constants/labels';
 
 const useApiClient = () => {
-  const baseURL = process.env.BASE_API_URL as string;
-
+  const baseURL = process.env.NEXT_PUBLIC_BASE_API_URL as string;
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   const request = async (endpoint: string, options = {}) => {
-    const url = `http://localhost:8085/pickMeUp/v1${endpoint}`;
+    const url = `${baseURL}${endpoint}`;
     setLoading(true);
     setError(null);
 
