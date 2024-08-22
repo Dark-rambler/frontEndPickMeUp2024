@@ -5,7 +5,7 @@ export interface StoreInterface {
     address: string;
     phone: string;
     email?: string;
-    image: string;
+    imageUrl: string;
     like: boolean;
     type: string;
     website?: string;

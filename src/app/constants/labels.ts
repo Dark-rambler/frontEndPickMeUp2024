@@ -1,7 +1,7 @@
 export const labels = {
     app: {
-        "title": "Next.js MUI",
-        "description": "Next.js MUI"
+        schedules: "Horario de atención: ",
+        address: "Dirección: ",
     },
     nav: {
         home: "Inicio",

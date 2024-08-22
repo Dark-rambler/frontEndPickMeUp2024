@@ -1,10 +1,11 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { BannerStore } from "./Banner";
+import { BannerStore } from "../components/Banner/Index";
 import { NavStores } from "./NavStores";
 import { CardItem } from "../components/cards/CardItem";
 import { StoreInterface } from "../interfaces/Store.interfaces";
 import useApiClient from "../utils/apiClient";
+import { labels } from "../constants/labels";
 
 export default function stores() {
   const { get } = useApiClient();
@@ -22,7 +23,13 @@ export default function stores() {
   return (
     <div className=" px-9">
       <div className=" flex justify-center ">
-        <BannerStore />
+        <BannerStore 
+        image="../../common/images/croasant.png"
+        description={labels.legends.storeLegend}
+        heigth= { "350px " }
+        responsiveHeight={"380px"}
+        color="banner-color"
+        />
       </div>
       <div>
         <NavStores />
@@ -31,11 +38,12 @@ export default function stores() {
         {data?.map((store, index) => (
           <CardItem
             key={index}
+            id={store.id}
             name={store.name}
             description={store.description}
             address={store.address}
             phone={store.phone}
-            image={store.image}
+            imageUrl={store.imageUrl}
             like={store.like}
             type={store.type}
           />

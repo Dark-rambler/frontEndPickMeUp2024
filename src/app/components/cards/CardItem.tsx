@@ -1,4 +1,5 @@
-import React from "react";
+
+import React, { use } from "react";
 import {
   Card,
   CardHeader,
@@ -9,24 +10,30 @@ import {
 } from "@nextui-org/react";
 import { IconSelector } from "../icons/Index";
 import { StoreInterface } from "@/app/interfaces/Store.interfaces";
+import { useRouter } from "next/navigation";
 
 export const CardItem = ({
+  id,
   name,
   description,
   address,
   phone,
-  image='https://saborgourmet.com/wp-content/uploads/pastelerias-favoritas-de-madrid-cientotreintagrados.jpg',
+  imageUrl ,
   like,
-  type
+  type,
 }: StoreInterface) => {
+  const router = useRouter();
+  const onSelectStore = () => {
+    router.push(`/stores/${id}`);
+  };
   return (
-    <div className="h-80 ">
+    <div className="h-80 " onClick={() => onSelectStore()}>
       <Card isFooterBlurred radius="lg" className="border-none h-full">
         <Image
           alt="Product image"
           className="cursor-pointer object-cover h-full hover:scale-105 transition-all duration-500"
           removeWrapper
-          src={image}
+          src={imageUrl}
         />
         <CardFooter className="grid grid-cols-3 min-h-[6rem]  gap-2 bg-white border-white/20 border-1 overflow-hidden py-1 absolute before:rounded-xl rounded-large bottom-1 w-[calc(100%_-_8px)] shadow-small ml-1 z-10 group">
           <div className="flex flex-col col-start-1 col-end-3">
@@ -37,7 +44,9 @@ export const CardItem = ({
               {description}
             </p>
             <div className="flex">
-              <p className=" bg-banner-color px-4 py-1 text-sm shadow-md mt-2 rounded-full">{type}</p>
+              <p className=" bg-banner-color px-4 py-1 text-sm shadow-md mt-2 rounded-full">
+                {type}
+              </p>
             </div>
           </div>
           <div className="h-full flex flex-row-reverse me-2">

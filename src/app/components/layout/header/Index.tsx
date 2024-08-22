@@ -3,7 +3,7 @@
 import React from "react";
 import { IconSelector } from "../../icons/Index";
 import { labels as titles } from "@/app/constants/labels";
-import { headerProps } from "@/app/interfaces/layout.interface";
+import { headerProps } from "@/app/interfaces/Layout.interface";
 import { CustomLogo } from "../../icons/Logo";
 import { usePathname } from "next/navigation";
 import Link from "next/link";

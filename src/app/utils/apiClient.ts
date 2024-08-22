@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import notify from './toast';
 import { labels } from '../constants/labels';
+import { ErrorInterface } from '../interfaces/Error.interface';
 
 const useApiClient = () => {
   const baseURL = process.env.NEXT_PUBLIC_BASE_API_URL as string;
@@ -28,13 +29,13 @@ const useApiClient = () => {
       const data = await response.json();
 
       if (!response.ok) {
-        notify(data.message || 'Error en la petición', 'error');
         throw new Error(data.message || 'Error en la petición');
       }
       notify(labels.message.doneMessage, 'success');
       return data;
-    } catch (error: any) {
-      notify(error, 'error');
+    } catch (error:ErrorInterface | any) {
+      notify(error.message, 'error');
+      console.error(error);
       setError(error.message);
       throw error;
     } finally {
