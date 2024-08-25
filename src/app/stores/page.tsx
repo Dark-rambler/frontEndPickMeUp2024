@@ -1,9 +1,10 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { BannerStore } from "./Banner";
 import { NavStores } from "./NavStores";
 import { CardItem } from "../components/cards/CardItem";
 import { StoreInterface } from "../interfaces/Store.interfaces";
+import useApiClient from "../utils/apiClient";
 
 export default function stores() {
   const stores : StoreInterface[] = [
@@ -45,7 +46,27 @@ export default function stores() {
       type:"Cafetería"
     },
   ];
+  const { get, loading, error } = useApiClient();
+  const [data, setData] = useState(null);
 
+
+  useEffect(() => {
+    console.log(data);
+
+    const fetchData = async () => {
+      try {
+        console.log('Fetching data...');
+        const responseData = await get('/company/search');
+        console.log('Data fetched:', responseData);
+        setData(responseData);
+      } catch (err) {
+        console.log('Error fetching data:', err);
+      }
+    };
+
+    fetchData();
+    console.log(data);
+  }, []);
 
   return (
     <div className=" px-9">

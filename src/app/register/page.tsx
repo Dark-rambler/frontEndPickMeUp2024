@@ -2,6 +2,7 @@
 
 import React from "react";
 import { RegisterForm } from "./registerForm";
+import { ToastContainer } from "react-toastify";
 
 export default function Register() {
   return (
