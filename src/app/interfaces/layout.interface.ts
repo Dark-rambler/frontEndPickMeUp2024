@@ -18,3 +18,10 @@ export interface BannerProps {
   address?: string;
 }
 
+export interface navBarInterface {
+  id: number;
+  icon: IconNameType;
+  label?: string;
+  link?: string;
+}
+

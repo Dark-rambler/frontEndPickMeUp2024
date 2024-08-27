@@ -11,3 +11,15 @@ export interface StoreInterface {
     website?: string;
     schedule?: string;
 }
+
+export interface productInterface {
+    id: number;
+    name: string;
+    description: string;
+    price: number;
+    imageUrl: string;
+    like: boolean;
+    category: string;
+    quantity: number;
+    storeId: number;
+}

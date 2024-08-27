@@ -31,6 +31,8 @@ export const labels = {
     },
     sections: {	
         "restaurants": "Restaurantes",
+        stores: "Tiendas",
+        products: "Productos",
     },
     message: {
         successMessage: "¡Registro exitoso!",
