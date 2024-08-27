@@ -31,7 +31,9 @@ const useApiClient = () => {
       if (!response.ok) {
         throw new Error(data.message || 'Error en la petición');
       }
+
       notify(labels.message.doneMessage, 'success');
+      
       return data;
     } catch (error:ErrorInterface | any) {
       notify(error.message, 'error');
