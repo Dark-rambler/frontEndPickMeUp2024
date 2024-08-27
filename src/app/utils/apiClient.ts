@@ -1,13 +1,15 @@
 import { useState } from 'react';
+import notify from './toast';
+import { labels } from '../constants/labels';
+import { ErrorInterface } from '../interfaces/Error.interface';
 
 const useApiClient = () => {
-  const baseURL = process.env.BASE_API_URL as string;
-
+  const baseURL = process.env.NEXT_PUBLIC_BASE_API_URL as string;
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   const request = async (endpoint: string, options = {}) => {
-    const url = `http://localhost:8085/pickMeUp/v1${endpoint}`;
+    const url = `${baseURL}${endpoint}`;
     setLoading(true);
     setError(null);
 
@@ -30,9 +32,12 @@ const useApiClient = () => {
         throw new Error(data.message || 'Error en la petición');
       }
 
+      notify(labels.message.doneMessage, 'success');
+      
       return data;
-    } catch (error: any) {
-      console.error('Error en la petición:', error);
+    } catch (error:ErrorInterface | any) {
+      notify(error.message, 'error');
+      console.error(error);
       setError(error.message);
       throw error;
     } finally {

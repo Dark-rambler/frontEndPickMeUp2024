@@ -1,37 +1,19 @@
 "use client";
 
 import Link from "next/link";
-import { IconNameType, IconSelector } from "../components/icons/Index";
-import { labels } from "../constants/labels";
-import InputComponent from "../components/intput/Index";
+import { IconNameType, IconSelector } from "../icons/Index";
+import { labels } from "../../constants/labels";
+import InputComponent from "../intput/Index";
+import { navBarInterface } from "../../interfaces/Layout.interface";
 
-export const NavStores = () => {
-  const typeStores = [
-    {
-      id: 1,
-      name: "Saludable",
-      icon: "user",
-    },
-    {
-      id: 2,
-      name: "Festivo",
-      icon: "party",
-    },
-    {
-      id: 3,
-      name: "Cafeterías",
-      icon: "coffe",
-    },
-    {
-      id: 4,
-      name: "Adultos",
-      icon: "user",
-    },
-  ];
+export const NavStores = ({ navBar, tittle }: { navBar: navBarInterface[],tittle:string }) => {
+
   return (
     <section className="mt-12 ">
       <div className="flex sm:flex-row flex-col justify-between w-full">
-        <h3 className="font-bold text-2xl text-tittles-color ">{labels.sections.restaurants}</h3>
+        <h3 className="font-bold text-2xl text-tittles-color ">
+          {tittle}
+        </h3>
         <div>
           <InputComponent
             name="searchStore"
@@ -48,7 +30,7 @@ export const NavStores = () => {
         </div>
       </div>
       <div className=" flex flex-wrap mt-2 items-center md:justify-start justify-center">
-        {typeStores.map((item, index) => (
+        {navBar.map((item:navBarInterface, index:number) => (
           <div
             className={`p-4 mt-6  hover:bg-primary transition-all
                duration-500 group cursor-pointer h-full flex items-center justify-center rounded`}
@@ -62,7 +44,7 @@ export const NavStores = () => {
               <h2
                 className={`${"text-secondary group-hover:text-gray-300/80"} `}
               >
-                {item.name}
+                {item.label}
               </h2>
             </span>
           </div>

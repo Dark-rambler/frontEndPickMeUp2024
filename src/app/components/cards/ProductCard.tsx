@@ -1,5 +1,4 @@
-
-import React from "react";
+import React, { use } from "react";
 import {
   Card,
   CardHeader,
@@ -7,27 +6,32 @@ import {
   CardFooter,
   Image,
   Button,
+  Tooltip,
 } from "@nextui-org/react";
 import { IconSelector } from "../icons/Index";
-import { StoreInterface } from "@/app/interfaces/Store.interfaces";
+import {
+  productInterface,
+  StoreInterface,
+} from "@/app/interfaces/Store.interfaces";
 import { useRouter } from "next/navigation";
 
-export const CardItem = ({
+export const CardProduct = ({
   id,
   name,
   description,
-  address,
-  phone,
-  imageUrl ,
+  imageUrl,
+  price,
+  quantity,
+  storeId,
   like,
-  type,
-}: StoreInterface) => {
+  category,
+}: productInterface) => {
   const router = useRouter();
-  const onSelectStore = () => {
-    router.push(`/stores/${id}`);
+  const onPressAdd = () => {
+    console.log("Add to cart");
   };
   return (
-    <div className="h-80 " onClick={() => onSelectStore()}>
+    <div className="h-80 ">
       <Card isFooterBlurred radius="lg" className="border-none h-full">
         <Image
           alt="Product image"
@@ -45,16 +49,28 @@ export const CardItem = ({
             </p>
             <div className="flex">
               <p className=" bg-banner-color px-4 py-1 text-sm shadow-md mt-2 rounded-full">
-                {type}
+                {category}
               </p>
             </div>
           </div>
-          <div className="h-full flex flex-row-reverse me-2">
-            <IconSelector
-              customClassName="cursor-pointer duration-100 "
-              name={like ? "heartFill" : "heart"}
-              color={like ? "red" : ""}
-            />
+          <div className="h-full flex justify-between flex-col-reverse py-2 items-center me-2">
+            <div>
+              <p className="text-text-color font-bold text-md "> {price} Bs</p>
+            </div>
+            <div data-tooltip-target="tooltip-default">
+              <Tooltip content="Agregar al carrito">
+                <Button
+                  onClick={() => onPressAdd()}
+                  className="w-4"
+                  color="success"
+                >
+                  <IconSelector
+                    customClassName="cursor-pointer duration-100 fill-icons-primary "
+                    name="addCart"
+                  />
+                </Button>
+              </Tooltip>
+            </div>
           </div>
         </CardFooter>
       </Card>

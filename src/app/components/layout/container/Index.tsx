@@ -3,7 +3,7 @@
 import React from "react";
 import { Header } from "../header/Index";
 import { Footer } from "../footer/Index";
-import { headerProps } from "@/app/interfaces/layout.interface";
+import { headerProps } from "@/app/interfaces/Layout.interface";
 interface ContainerProps {
   children: React.ReactNode;
 }
