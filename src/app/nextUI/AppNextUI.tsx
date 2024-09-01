@@ -7,7 +7,9 @@ interface AppMuiProps {
   changeMode?: () => void;
 }
 const AppNextUI = ({ children }: Readonly<AppMuiProps>) => {
-  return <NextUIProvider>{children}</NextUIProvider>;
+  return <NextUIProvider>
+    {children}
+    </NextUIProvider>;
 };
 
 export default AppNextUI;

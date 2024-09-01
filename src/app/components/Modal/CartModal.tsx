@@ -1,10 +1,22 @@
+import { useSelector } from "react-redux";
 import MyModal from "./Index";
+import { useEffect } from "react";
 
 interface CartModalProps {
   isOpen: boolean;
   onOpenChange: (open: boolean) => void;
 }
 const CartModal = ({ isOpen, onOpenChange }: CartModalProps) => {
+  const products = useSelector((state) => state);
+  console.log(products);
+  useEffect(() => {
+    getProducts();
+  }, []);
+
+  const getProducts = () => {
+      
+  }
+
   return (
     <MyModal
       isOpen={isOpen}

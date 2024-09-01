@@ -6,16 +6,48 @@ import { CardItem } from "../components/cards/CardItem";
 import { StoreInterface } from "../interfaces/Store.interfaces";
 import useApiClient from "../utils/apiClient";
 import { labels } from "../constants/labels";
-import { navBarInterface } from "../interfaces/Layout.interface";
+import { navBarInterface } from "../interfaces/layout.interface";
 
 export default function stores() {
   const { get } = useApiClient();
   const [data, setData] = useState<StoreInterface[]>();
 
   const fetchData = async () => {
-      const responseData = await get('/store/search');
-      setData(responseData);
+      // const responseData = await get('/store/search');
+      setData(products);
   };
+  const products:StoreInterface[] = [
+    {
+      id: 1,
+      name: "Croasant",
+      description: "Delicioso croasant de chocolate",
+      address: "Calle 123 # 123",
+      phone: "123456789",
+      imageUrl: "../../common/images/croasant.png",
+      like: true,
+      type: "Saludable",
+    },
+    {
+      id: 2,
+      name: "Café",
+      description: "Delicioso café",
+      address: "Calle 123 # 123",
+      phone: "123456789",
+      imageUrl: "../../common/images/coffe.png",
+      like: true,
+      type: "Cafeterías",
+    },
+    {
+      id: 3,
+      name: "Cerveza",
+      description: "Deliciosa cerveza",
+      address: "Calle 123 # 123",
+      phone: "123456789",
+      imageUrl: "../../common/images/beer.png",
+      like: true,
+      type: "Adultos",
+    },
+  ];
 
   useEffect(() => {  
     fetchData();

@@ -22,9 +22,9 @@ export default function Page({ params }: { params: { id: string } }) {
   };
 
   const fetchProducts = async () => {
-    const response = await get(`/product/search`);
-    setProducts(response);
-    console.log(response);
+    // const response = await get(`/product/search`);
+    setProducts(productsStore);
+    // console.log(response);
   }
 
   useEffect(() => {

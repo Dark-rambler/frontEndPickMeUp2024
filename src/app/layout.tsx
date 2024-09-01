@@ -2,9 +2,10 @@ import React from "react";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import AppMui from "./nextUI/AppNextUI";
+import AppNextUI from "./nextUI/AppNextUI";
 import { Container } from "./components/layout/container/Index";
 import { Toaster } from "react-hot-toast";
+import StoreProvider from "./StoreProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,10 +22,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="">
-        <AppMui>
+      <StoreProvider>
+        <AppNextUI>
           <Toaster />
           <Container>{children}</Container>
-        </AppMui>
+        </AppNextUI>
+        </StoreProvider>
       </body>
     </html>
   );

@@ -1,19 +1,14 @@
-import React, { use } from "react";
-import {
-  Card,
-  CardHeader,
-  CardBody,
-  CardFooter,
-  Image,
-  Button,
-  Tooltip,
-} from "@nextui-org/react";
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Card, CardFooter, Image, Button, Tooltip } from "@nextui-org/react";
 import { IconSelector } from "../icons/Index";
 import {
   productInterface,
   StoreInterface,
 } from "@/app/interfaces/Store.interfaces";
 import { useRouter } from "next/navigation";
+import { get } from "react-hook-form";
+import { addProduct } from "@/lib/features/cart/cartSlice";
 
 export const CardProduct = ({
   id,
@@ -27,8 +22,11 @@ export const CardProduct = ({
   category,
 }: productInterface) => {
   const router = useRouter();
-  const onPressAdd = () => {
-    console.log("Add to cart");
+  const dispatch = useDispatch();
+
+  const onPress = () => {
+    console.log("add product");
+    dispatch(addProduct(id));
   };
   return (
     <div className="h-80 ">
@@ -60,7 +58,7 @@ export const CardProduct = ({
             <div data-tooltip-target="tooltip-default">
               <Tooltip content="Agregar al carrito">
                 <Button
-                  onClick={() => onPressAdd()}
+                  onClick={() => onPress()}
                   className="w-4"
                   color="success"
                 >

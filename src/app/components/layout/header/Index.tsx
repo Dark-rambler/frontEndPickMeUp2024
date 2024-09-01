@@ -1,24 +1,28 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import { IconSelector } from "../../icons/Index";
 import { labels as titles } from "@/app/constants/labels";
-import { headerProps } from "@/app/interfaces/Layout.interface";
+import { headerProps } from "@/app/interfaces/layout.interface"; 
 import { CustomLogo } from "../../icons/Logo";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { Badge, useDisclosure } from "@nextui-org/react";
-import MyModal from "../../Modal/Index";
 import CartModal from "../../Modal/CartModal";
+import { useSelector} from "react-redux";
 
 export interface interfaceOptionsProps {
   menu: headerProps[];
 }
 
 export const Header = ({ menu }: interfaceOptionsProps) => {
+  const products = useSelector((state)=> state);
   const pathName = usePathname();
   const {isOpen, onOpen, onOpenChange } = useDisclosure();
 
+  useEffect(() => {
+    console.log( typeof products);
+  }, []);
   return (
     <div className="grid grid-cols-3 bg-white justify-between items-center border-b-1 border-secondary-50">
       <div className="flex items-center space-x-4">
@@ -73,7 +77,7 @@ export const Header = ({ menu }: interfaceOptionsProps) => {
         <a href="https://facebook.com">
           <IconSelector name="facebook" customClassName="fill-icons-primary" />
         </a>
-        <Badge content="5" color="primary" variant="solid">
+        <Badge content={products.cartReducer.totalProducts} color="primary" variant="solid">
           <span
             onClick={() => onOpen()}
             className="rounded-full border-2 p-1 hover:scale-110 cursor-pointer transition-all animation-duration-300 "
