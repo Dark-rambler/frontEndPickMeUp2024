@@ -2,7 +2,7 @@
 
 import { use, useEffect } from "react";
 import { labels } from "../../constants/labels";
-import { BannerProps } from "../../interfaces/Layout.interface";
+import { BannerProps } from "@/app/interfaces/layout.interface";
 
 export const BannerStore = ({
   title,
@@ -14,9 +14,6 @@ export const BannerStore = ({
   schedule,
   address,
 }: BannerProps) => {
-  useEffect(() => {
-    console.log(height);
-  }, []);
   return (
     <div
       className={`w-full rounded-2xl bg-${color} z-0 bg-cover bg-center bg-no-repeat filter`}

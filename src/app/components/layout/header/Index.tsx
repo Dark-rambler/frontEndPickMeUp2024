@@ -20,9 +20,6 @@ export const Header = ({ menu }: interfaceOptionsProps) => {
   const pathName = usePathname();
   const {isOpen, onOpen, onOpenChange } = useDisclosure();
 
-  useEffect(() => {
-    console.log( typeof products);
-  }, []);
   return (
     <div className="grid grid-cols-3 bg-white justify-between items-center border-b-1 border-secondary-50">
       <div className="flex items-center space-x-4">

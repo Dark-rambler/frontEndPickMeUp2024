@@ -14,7 +14,7 @@ export const CardProduct = ({
   id,
   name,
   description,
-  imageUrl,
+  image,
   price,
   quantity,
   storeId,
@@ -25,8 +25,8 @@ export const CardProduct = ({
   const dispatch = useDispatch();
 
   const onPress = () => {
-    console.log("add product");
-    dispatch(addProduct(id));
+    dispatch(
+      addProduct({ id, name, description, image, price, like, category, quantity, storeId }));
   };
   return (
     <div className="h-80 ">
@@ -35,7 +35,7 @@ export const CardProduct = ({
           alt="Product image"
           className="cursor-pointer object-cover h-full hover:scale-105 transition-all duration-500"
           removeWrapper
-          src={imageUrl}
+          src={image}
         />
         <CardFooter className="grid grid-cols-3 min-h-[6rem]  gap-2 bg-white border-white/20 border-1 overflow-hidden py-1 absolute before:rounded-xl rounded-large bottom-1 w-[calc(100%_-_8px)] shadow-small ml-1 z-10 group">
           <div className="flex flex-col col-start-1 col-end-3">

@@ -4,7 +4,7 @@ import Link from "next/link";
 import { IconNameType, IconSelector } from "../icons/Index";
 import { labels } from "../../constants/labels";
 import InputComponent from "../intput/Index";
-import { navBarInterface } from "../../interfaces/Layout.interface";
+import { navBarInterface } from "../../interfaces/layout.interface";
 
 export const NavStores = ({ navBar, tittle }: { navBar: navBarInterface[],tittle:string }) => {
 

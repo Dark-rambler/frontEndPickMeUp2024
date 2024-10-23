@@ -13,8 +13,8 @@ export default function stores() {
   const [data, setData] = useState<StoreInterface[]>();
 
   const fetchData = async () => {
-      // const responseData = await get('/store/search');
-      setData(products);
+      const responseData = await get('/store/search');
+      setData(responseData);
   };
   const products:StoreInterface[] = [
     {

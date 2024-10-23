@@ -17,7 +17,7 @@ export interface productInterface {
     name: string;
     description: string;
     price: number;
-    imageUrl: string;
+    image: string;
     like: boolean;
     category: string;
     quantity: number;

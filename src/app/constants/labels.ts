@@ -1,7 +1,11 @@
+import { button } from "@nextui-org/react";
+
 export const labels = {
     app: {
         schedules: "Horario de atención: ",
         address: "Dirección: ",
+        emptyCart: "Carrito Vacío",
+        totalPurchase: "Total de la Compra: ",
     },
     nav: {
         home: "Inicio",
@@ -38,5 +42,8 @@ export const labels = {
         successMessage: "¡Registro exitoso!",
         doneMessage: "¡Listo!",
         defaultGenericMessage: "Algo salió mal",
+    },
+    buttons: {
+        next: "Siguiente",
     },
     };

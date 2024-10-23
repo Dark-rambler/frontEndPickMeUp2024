@@ -14,6 +14,7 @@ export interface ModalProps {
   children: React.ReactNode;
   textCloseButton?: string;
   textActionButton?: string;
+  showButtons?: boolean;
   modalPlacement?: "auto" | "top" | "top-center" | "bottom" | "bottom-center";
 }
 
@@ -22,6 +23,7 @@ const MyModal = ({
   onOpenChange,
   title,
   children,
+  showButtons = true,
   textCloseButton = "Cerrar",
   textActionButton = "Aceptar",
   modalPlacement = "auto",
@@ -38,12 +40,16 @@ const MyModal = ({
             <ModalHeader className="flex flex-col gap-1">{title}</ModalHeader>
             <ModalBody>{children}</ModalBody>
             <ModalFooter>
-              <Button color="danger" variant="light" onPress={onClose}>
-                {textCloseButton}
-              </Button>
-              <Button color="primary" onPress={onClose}>
-                {textActionButton}
-              </Button>
+              {showButtons && (
+                <>
+                  <Button color="danger" variant="light" onPress={onClose}>
+                    {textCloseButton}
+                  </Button>
+                  <Button color="primary" onPress={onClose}>
+                    {textActionButton}
+                  </Button>
+                </>
+              )}
             </ModalFooter>
           </>
         )}

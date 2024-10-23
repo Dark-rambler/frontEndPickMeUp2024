@@ -5,7 +5,7 @@ import useApiClient from "@/app/utils/apiClient";
 import { useEffect, useState } from "react";
 import { BannerStore } from "../../components/Banner/Index";
 import { NavStores } from "../../components/navbar/Index";
-import { navBarInterface } from "@/app/interfaces/Layout.interface";
+import { navBarInterface } from "@/app/interfaces/layout.interface"; 
 import { labels } from "@/app/constants/labels";
 import { CardProduct } from "@/app/components/cards/ProductCard";
 
@@ -18,13 +18,10 @@ export default function Page({ params }: { params: { id: string } }) {
   const fetchData = async () => {
     const response = await get(`/store/${params.id}`);
     setStore(response);
-    console.log(response);
   };
 
   const fetchProducts = async () => {
-    // const response = await get(`/product/search`);
     setProducts(productsStore);
-    // console.log(response);
   }
 
   useEffect(() => {
@@ -38,7 +35,7 @@ export default function Page({ params }: { params: { id: string } }) {
       name: "Producto 1",
       description: "Descripcion del producto 1",
       price: 100,
-      imageUrl: "https://crehana-blog.imgix.net/media/filer_public/6b/70/6b7020e2-507c-4110-b5dc-1dc9143cb5e9/postres_de_masa_de_manga.jpg?auto=format&q=50",
+      image: "https://crehana-blog.imgix.net/media/filer_public/6b/70/6b7020e2-507c-4110-b5dc-1dc9143cb5e9/postres_de_masa_de_manga.jpg?auto=format&q=50",
       like: false,
       category: "Producto",
       quantity: 1,
@@ -49,7 +46,7 @@ export default function Page({ params }: { params: { id: string } }) {
       name: "Producto 2",
       description: "Descripcion del producto 2",
       price: 200,
-      imageUrl: "https://crehana-blog.imgix.net/media/filer_public/fd/fa/fdfae1a6-7e61-4680-a06f-94c630691bd9/postre_de_masa_ligera.jpg?auto=format&q=50",
+      image: "https://crehana-blog.imgix.net/media/filer_public/fd/fa/fdfae1a6-7e61-4680-a06f-94c630691bd9/postre_de_masa_ligera.jpg?auto=format&q=50",
       like: false,
       quantity: 3,
       category: "Producto",
@@ -60,7 +57,7 @@ export default function Page({ params }: { params: { id: string } }) {
       name: "Producto 3",
       description: "Descripcion del producto 3",
       price: 300,
-      imageUrl: "https://www.recetasnestle.com.co/sites/default/files/inline-images/tipos-masa-batida-reposteria-pastel.jpg",
+      image: "https://www.recetasnestle.com.co/sites/default/files/inline-images/tipos-masa-batida-reposteria-pastel.jpg",
       like: false,
       category: "Producto",
       quantity: 2,
@@ -108,7 +105,7 @@ export default function Page({ params }: { params: { id: string } }) {
                 id={product.id}
                 name={product.name}
                 description={product.description}
-                imageUrl={product.imageUrl}
+                image={product.image}
                 price={product.price}
                 storeId={product.storeId}
                 like={product.like}
